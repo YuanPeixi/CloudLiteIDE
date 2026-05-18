@@ -9,7 +9,7 @@
 ## 运行
 
 ```bash
-dotnet run --project /home/runner/work/CloudLiteIDE/CloudLiteIDE/src/api/CloudLiteIDE.Api.csproj
+dotnet run --project src/api/CloudLiteIDE.Api.csproj
 ```
 
 打开浏览器访问：`http://localhost:5000` 或控制台显示的地址。

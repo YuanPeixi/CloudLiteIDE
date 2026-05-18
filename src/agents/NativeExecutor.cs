@@ -21,7 +21,7 @@ public sealed class NativeExecutor : IExecutor
 
     public async ValueTask<ExecutionResult> ExecuteAsync(ExecuteRequest request, ChannelWriter<ExecutionEvent> streamWriter, CancellationToken cancellationToken)
     {
-        var runDir = Path.Combine(_sessionRoot, DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString());
+        var runDir = Path.Combine(_sessionRoot, Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(runDir);
 
         if (request.Language.Equals("python", StringComparison.OrdinalIgnoreCase))
@@ -185,7 +185,7 @@ public sealed class NativeExecutor : IExecutor
         return null;
     }
 
-    public ValueTask DisposeAsync()
+    public void Dispose()
     {
         try
         {
@@ -198,7 +198,5 @@ public sealed class NativeExecutor : IExecutor
         {
             // best effort cleanup
         }
-
-        return ValueTask.CompletedTask;
     }
 }

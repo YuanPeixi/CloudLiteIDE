@@ -2,7 +2,7 @@ using System.Threading.Channels;
 
 namespace CloudLiteIDE.Agents;
 
-public interface IExecutor : IAsyncDisposable
+public interface IExecutor : IDisposable
 {
     Guid ExecutorId { get; }
     string AnonymousToken { get; }

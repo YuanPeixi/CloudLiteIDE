@@ -59,7 +59,7 @@ public sealed class ExecutorRegistry
         if (_sessions.TryRemove(executorId, out var session))
         {
             session.EventChannel.Writer.TryComplete();
-            session.Executor.DisposeAsync().AsTask().GetAwaiter().GetResult();
+            session.Executor.Dispose();
             session.RunLock.Dispose();
             return true;
         }

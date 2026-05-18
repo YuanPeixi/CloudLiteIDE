@@ -14,7 +14,14 @@ public sealed class ExecutorCleanupHostedService : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
             _registry.CleanupExpired();
-            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+            try
+            {
+                await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+            }
+            catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
+            {
+                break;
+            }
         }
     }
 }
