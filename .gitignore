@@ -1,3 +1,29 @@
 **/bin/
 **/obj/
 .vs/
+
+### New ignore rules for .NET projects
+
+# Build output
+bin/
+obj/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET / NuGet
+*.nupkg
+packages/
+TestResults/
+
+# Logs and temp files
+*.log
+*.tmp
+*.cache
