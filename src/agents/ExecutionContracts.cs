@@ -4,7 +4,8 @@ namespace CloudLiteIDE.Agents;
 
 public enum ExecutorMode
 {
-    Native
+    Native,
+    Sandboxie
 }
 
 public enum StreamEventType
@@ -49,6 +50,9 @@ public sealed class ExecutorSettings
     public const string SectionName = "Executor";
 
     public ExecutorMode Mode { get; init; } = ExecutorMode.Native;
+    public string SandboxieStartExePath { get; init; } = "Start.exe";
+    public string? SandboxieBoxName { get; init; }
+    public string SandboxieTemplateBoxName { get; init; } = "PrivacyEnhanced";
     public int LeaseTtlSeconds { get; init; } = 120;
     public int RunTimeoutSeconds { get; init; } = 10;
     public int CompileTimeoutSeconds { get; init; } = 10;

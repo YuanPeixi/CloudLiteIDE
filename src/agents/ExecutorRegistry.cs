@@ -29,6 +29,8 @@ public sealed class ExecutorRegistry
         IExecutor executor = _settings.Mode switch
         {
             ExecutorMode.Native => new NativeExecutor(id, _settings),
+            ExecutorMode.Sandboxie when OperatingSystem.IsWindows() => new SandboxieExecutor(id, _settings),
+            ExecutorMode.Sandboxie => throw new NotSupportedException("Sandboxie mode is only supported on Windows."),
             _ => throw new NotSupportedException($"Unsupported executor mode: {_settings.Mode}")
         };
 
