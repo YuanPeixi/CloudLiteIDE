@@ -1,0 +1,75 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  min-height: 0;
+}
+
+.editor-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#editor {
+  flex: 1;
+  min-height: 260px;
+}
+
+.stdin {
+  padding: 0.5rem;
+}
+
+#stdin {
+  width: 100%;
+  box-sizing: border-box;
+  background: #111;
+  color: #e8e8e8;
+  border: 1px solid #333;
+}
+
+.output-pane {
+  border-left: 1px solid #333;
+  padding: 0.5rem;
+  overflow: auto;
+}
+
+pre {
+  background: #111;
+  border: 1px solid #333;
+  padding: 0.5rem;
+  white-space: pre-wrap;
+  min-height: 3rem;
+  max-height: 20vh;
+  overflow: auto;
+}

@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/api/">
+    <Project Path="src/api/CloudLiteIDE.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CloudLiteIDE.Tests/CloudLiteIDE.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudLiteIDE</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>CloudLiteIDE</h1>
+    <div class="controls">
+      <label>
+        Language
+        <select id="language">
+          <option value="cpp">C++</option>
+          <option value="python">Python</option>
+        </select>
+      </label>
+      <label>
+        Compiler
+        <select id="compiler">
+          <option value="g++">G++</option>
+          <option value="clang++">Clang</option>
+        </select>
+      </label>
+      <label>
+        C++ Std
+        <select id="standard">
+          <option>c++11</option>
+          <option>c++14</option>
+          <option selected>c++17</option>
+          <option>c++20</option>
+          <option>c++23</option>
+        </select>
+      </label>
+      <label>
+        Opt
+        <select id="optimization">
+          <option>O0</option>
+          <option>O1</option>
+          <option selected>O2</option>
+          <option>O3</option>
+          <option>Ofast</option>
+        </select>
+      </label>
+      <label>
+        Warnings
+        <select id="warnings">
+          <option value="none">None</option>
+          <option value="Wall" selected>Wall</option>
+          <option value="Wextra">Wextra</option>
+          <option value="Wpedantic">Wpedantic</option>
+        </select>
+      </label>
+      <button id="runBtn">Run</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="editor-pane">
+      <div id="editor"></div>
+      <label class="stdin">
+        Stdin
+        <textarea id="stdin" rows="6" placeholder="Multi-line stdin"></textarea>
+      </label>
+    </section>
+
+    <section class="output-pane">
+      <h3>Status</h3>
+      <pre id="status"></pre>
+      <h3>Compile Output</h3>
+      <pre id="compile"></pre>
+      <h3>Stdout</h3>
+      <pre id="stdout"></pre>
+      <h3>Stderr</h3>
+      <pre id="stderr"></pre>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
