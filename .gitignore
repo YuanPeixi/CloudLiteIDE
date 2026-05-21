@@ -27,3 +27,5 @@ TestResults/
 *.log
 *.tmp
 *.cache
+
+Start.cmd

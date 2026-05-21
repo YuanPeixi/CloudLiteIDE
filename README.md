@@ -9,6 +9,8 @@
 ## 运行
 
 ```bash
+$env:Path = "PathToCompiler" + ";" + $env:Path
+$env:Path = "PathToPython" + ";" + $env:Path
 dotnet run --project src/api/CloudLiteIDE.Api.csproj
 ```
 
